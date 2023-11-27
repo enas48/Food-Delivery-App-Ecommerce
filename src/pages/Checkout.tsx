@@ -2,8 +2,8 @@ import React from 'react'
 
 const Checkout = () => {
   return (
-    <div>
-      
+    <div className='mx-auto max-w-screen-xl px-6 py-3 '>
+      checkout
     </div>
   )
 }

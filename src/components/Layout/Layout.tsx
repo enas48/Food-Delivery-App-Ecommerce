@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="md:text-base">
         <Router />
       </div>
       <Footer />

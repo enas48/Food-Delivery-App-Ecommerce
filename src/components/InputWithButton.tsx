@@ -13,6 +13,7 @@ export function InputWithButton() {
   return (
     <div className="relative flex w-full max-w-[24rem]">
       <Input
+       crossOrigin=""
         type="email"
         label="Email Address"
         value={email}

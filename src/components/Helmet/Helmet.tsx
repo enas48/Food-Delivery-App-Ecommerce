@@ -10,7 +10,7 @@ interface Props {
 const Helmet = (props: Props) => {
 
   document.title = "Food ordering app | " + props.title;
-  return <div className="w-100">{props.children}</div>;
+  return <div className="w-100 ">{props.children}</div>;
 };
 
 export default Helmet;

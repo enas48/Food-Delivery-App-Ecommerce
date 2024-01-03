@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from '../components/Helmet/Helmet'
 import { ButtonGroup, Button } from "@material-tailwind/react";
 import { NavLink } from 'react-router-dom';
+import Category from '../components/ui-category/Category';
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
                   </NavLink>
 
                 </ButtonGroup>
+                <br/>
                 <div className='flex items-center gap-4 flex-wrap'>
                   <p className='flex items-center gap-2'>
                     <span className='px-2 py-1   text-lg rounded-full bg-[#FB9C16] '><i className="ri-car-line"></i></span> <span>No shipping charge</span>
@@ -36,6 +38,7 @@ const Home = () => {
               <div>
                 <img src={process.env.PUBLIC_URL + '../../assets/images/img3.svg'} alt="avatar" />
               </div>
+              <Category/>
 
             </div>
           </div>

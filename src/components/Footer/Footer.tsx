@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-blue-gray-50 py-6 md:justify-between">
     
           <NavLink to="/home" className="mr-4 cursor-pointer py-1">
-            <img src={process.env.PUBLIC_URL + '../../assets/logo.png'} className='max-h-20' alt="avatar" />
+            <img src={process.env.PUBLIC_URL + 'assets/logo.png'} className='max-h-20' alt="avatar" />
           </NavLink>
 
           <div className="grid grid-cols-1 md:grid-cols-3 justify-between gap-4 md:text-lg w-full md:w-auto">

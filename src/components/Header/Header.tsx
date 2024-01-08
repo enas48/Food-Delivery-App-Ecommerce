@@ -72,7 +72,7 @@ const Header = () => {
       <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none shadow-none text-[#000] ">
         <div className="flex items-center justify-between ">
           <NavLink to="/home" className="mr-4 cursor-pointer py-1">
-            <img src={process.env.PUBLIC_URL + '../../assets/logo.png'} className='max-h-20' alt="avatar" />
+            <img src={process.env.PUBLIC_URL + 'assets/logo.png'} className='max-h-20' alt="avatar" />
           </NavLink>
 
 

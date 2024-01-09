@@ -4,19 +4,19 @@ export default function Features() {
     const featureData = [
         {
             title: 'Quick Delivery',
-            imgUrl: `${process.env.PUBLIC_URL} assets/images/delivery.svg`,
+            imgUrl: `${process.env.PUBLIC_URL} assets/images/service-01.png`,
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             Minus: 'adipisicing'
         },
         {
             title: 'Super Dine In',
-            imgUrl: `${process.env.PUBLIC_URL} assets/images/img2.svg`,
+            imgUrl: `${process.env.PUBLIC_URL} assets/images/service-02.png`,
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             Minus: "Porro."
         },
         {
             title: 'Easy Pick Up',
-            imgUrl: `${process.env.PUBLIC_URL} assets/images/img3.svg`,
+            imgUrl: `${process.env.PUBLIC_URL} assets/images/service-03.png`,
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             Minus: "Porro."
         }
@@ -34,10 +34,9 @@ export default function Features() {
 
             <div className='grid grid-cols-3 gap-2 md:gap-4 justify-items-center  text-center mx-auto'>
                 {featureData.map((item, i) => {
-                    return (<span key={i} className='flex flex-col  w-full items-center text-center md:text-left p-2 content-center  gap-4'>
+                    return (<span key={i} className='flex flex-col  w-full items-center text-center p-2 content-center  gap-2'>
                         <img className=' w-auto h-[6rem] ' src={item.imgUrl} alt='' />
-
-                        <span className='font-bold'>{item.title}</span>
+                        <span className='font-bold text-lg'>{item.title}</span>
                         <p>{item.desc}</p>
 
                     </span>

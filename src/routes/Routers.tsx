@@ -12,7 +12,7 @@ import Contact from "../pages/Contact";
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route  path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/foods" element={<AllFood />} />
       <Route path="/foods/:id" element={<FoodDetails />} />

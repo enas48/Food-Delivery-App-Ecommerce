@@ -1,7 +1,8 @@
 import React from 'react'
 import { ButtonGroup, Button } from "@material-tailwind/react";
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 export default function Banner() {
+    const navigate = useNavigate();
     return (
         <div className="container mx-auto">
             <div className="grid gap-9 lg:content-center lg:grid-cols-2   ">
@@ -9,16 +10,16 @@ export default function Banner() {
                     <h5 className='text-xl  mb-3'>Easy way to make an order</h5>
                     <h1 className='text-3xl  lg:text-[2.5rem] font-bold mb-4 leading-normal'><span className='text-[#FB9C16]'>HUNGRY?</span> just wait <br />food at <span className='text-[#FB9C16] '>your&nbsp;door</span></h1>
                     <p className='leading-relaxed mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus at voluptate voluptas nam distinctio quo, dolore molestiae, qui rerum ullam sint facere voluptatum veniam vitae libero magni, voluptates quasi aperiam.</p>
-                    <ButtonGroup className="gap-3 p-1 mb-4">
+                    <div className="flex gap-3 p-1 mb-4">
                         <Button className="rounded flex items-center h-[2.8rem] bg-[#FB9C16]"><span>
                             Order now
                         </span><i className="ri-arrow-drop-right-line text-lg"></i>
                         </Button>
-                        <NavLink to="/foods" className="border-none cursor-pointer">
-                            <Button className="rounded bg-white h-[2.8rem] text-[#FB9C16] border-2 border-[#FB9C16] hover:border-[#fb9c16c9]">See all foods</Button>
-                        </NavLink>
 
-                    </ButtonGroup>
+                        <Button onClick={() => navigate('/foods')} className="rounded cursor-pointer bg-white h-[2.8rem] text-[#FB9C16] border border-[#FB9C16] hover:border-[#fb9c16c9]">See all foods</Button>
+
+
+                    </div>
                     <br />
                     <div className='flex items-center gap-4 flex-wrap'>
                         <p className='flex items-center gap-2'>

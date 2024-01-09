@@ -3,6 +3,7 @@ import Helmet from '../components/Helmet/Helmet'
 import Banner from '../components/Banner/Banner';
 import Category from '../components/ui-category/Category';
 import Features from '../components/Features/Features';
+import ProductsList from '../components/productsList/ProductsList';
 const Home = () => {
   return (
     <div className='mx-auto max-w-screen-xl px-6 py-12 '>
@@ -16,6 +17,9 @@ const Home = () => {
           </div>
           <div className='mb-20'>
             <Features />
+          </div>
+          <div className='mb-20'>
+            <ProductsList/>
           </div>
         </div>
       </Helmet>

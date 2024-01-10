@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonGroup, Button } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
 export default function Banner() {
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function Banner() {
                     </div>
                 </div>
                 <div>
-                    <img src={process.env.PUBLIC_URL + 'assets/images/img3.svg'} alt="avatar" />
+                    <img src={process.env.PUBLIC_URL + 'assets/images/banner.svg'} alt="avatar" />
                 </div>
 
             </div>

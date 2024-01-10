@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Product } from '../../types/Product'
+
 export default function ProductCard(props: { item: Product }) {
     const { id,
         title,

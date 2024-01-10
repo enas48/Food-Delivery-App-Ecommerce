@@ -118,7 +118,7 @@ export default function ProductsList() {
     }
     return (
         <div>
-            <h2 className='text-2xl mt-4 font-bold'>Popular Foods</h2>
+            <h2 className='text-2xl mt-4 font-bold text-center w-full'>Popular Foods</h2>
             <br />
             <div className='flex  flex-wrap font-bold gap-3 md:gap-6 justify-center  text-center mx-auto bg-[#FB9C16] p-3'>
                 <button onClick={(e) => activeCategory(e)} name='All' className={`p-2 rounded ${category === 'All' && 'bg-[#fff8eb] text-[#FB9C16]'}`}>All</button>

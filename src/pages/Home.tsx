@@ -25,6 +25,9 @@ const Home = () => {
           <div className='mb-20'>
             <WhyChooseus />
           </div>
+          <div className='mb-20'>
+            <ProductsList type='Pizza' />
+          </div>
         </div>
       </Helmet>
 

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Category } from '../../types/Category'
 import { Product } from '../../types/Product'
-import ProductCard from '../ProductCard/ProductCard'
+import ProductCard from '../ui/ProductCard/ProductCard'
 import { type } from '@testing-library/user-event/dist/type'
 interface Props {
     type?: String
@@ -11,120 +11,120 @@ export default function ProductsList({ type = 'all' }: Props) {
     const categories: Category[] = [
         {
             title: 'Burger',
-            img: `${process.env.PUBLIC_URL + 'assets/images/burger.png'}`
+            img: `${process.env.PUBLIC_URL + 'assets/images/products/burger.png'}`
         },
         {
             title: 'Pizza',
-            img: `${process.env.PUBLIC_URL + 'assets/images/pizza.png'}`
+            img: `${process.env.PUBLIC_URL + 'assets/images/products/pizza.png'}`
         },
         {
             title: 'Bread',
-            img: `${process.env.PUBLIC_URL + 'assets/images/bread.png'}`
+            img: `${process.env.PUBLIC_URL + 'assets/images/products/bread.png'}`
         }
     ]
     const products: Product[] = [
         {
             id: 1,
             title: 'Burger1',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/burger.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/burger.png'}`,
             price: '2.5',
             category: 'Burger'
         },
         {
             id: 2,
             title: 'Burger2',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/burger2.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/burger2.png'}`,
             price: '1.5',
             category: 'Burger'
         },
         {
             id: 3,
             title: 'Burger3',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/burger3.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/burger3.png'}`,
             price: '2',
             category: 'Burger'
         },
          {
             id: 4,
             title: 'Burger4',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/burger4.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/burger4.png'}`,
             price: '4',
             category: 'Burger'
         },
         {
             id: 12,
             title: 'Burger5',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/burger5.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/burger5.png'}`,
             price: '3.4',
             category: 'Burger'
         },
         {
             id: 5,
             title: 'Pizza1',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/pizza.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/pizza.png'}`,
             price: '5.5',
             category: 'Pizza'
         },
         {
             id: 6,
             title: 'Pizza2',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/pizza2.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/pizza2.png'}`,
             price: '3.5',
             category: 'Pizza'
         },
         {
             id: 7,
             title: 'Pizza3',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/pizza3.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/pizza3.png'}`,
             price: '4',
             category: 'Pizza'
         },
         {
             id: 13,
             title: 'Pizza4',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/pizza4.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/pizza4.png'}`,
             price: '3.5',
             category: 'Pizza'
         },
         {
             id: 14,
             title: 'Pizza5',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/pizza5.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/pizza5.png'}`,
             price: '4',
             category: 'Pizza'
         },
         {
             id: 8,
             title: 'Bread1',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/bread.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/bread.png'}`,
             price: '1.5',
             category: 'Bread'
         },
         {
             id: 9,
             title: 'Bread2',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/bread2.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/bread2.png'}`,
             price: '2.5',
             category: 'Bread'
         },
         {
             id: 10,
             title: 'Bread3',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/bread3.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/bread3.png'}`,
             price: '4.5',
             category: 'Bread'
         },
         {
             id: 11,
             title: 'Bread4',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/bread4.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/bread4.png'}`,
             price: '0.5',
             category: 'Bread'
         },
         {
             id: 15,
             title: 'Bread5',
-            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/bread5.png'}`,
+            imageUrl: `${process.env.PUBLIC_URL + 'assets/images/products/bread5.png'}`,
             price: '1',
             category: 'Bread'
         }

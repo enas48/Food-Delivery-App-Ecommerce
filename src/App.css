@@ -5,3 +5,6 @@
 .placeholder-shown\:border:placeholder-shown{
   border-width: 2px;
 }
+.custom-carsoul button{
+  display: none;
+}

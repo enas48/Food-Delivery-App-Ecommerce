@@ -32,7 +32,7 @@ export default function Features() {
                 </div>
             </div>
 
-            <div className='grid grid-cols-3 gap-2 md:gap-4 justify-items-center  text-center mx-auto'>
+            <div className='grid md:grid-cols-3 gap-2 md:gap-4 justify-items-center  text-center mx-auto'>
                 {featureData.map((item, i) => {
                     return (<span key={i} className='flex flex-col  w-full items-center text-center p-2 content-center  gap-2'>
                         <img className=' w-auto h-[6rem] ' src={item.imgUrl} alt='' />

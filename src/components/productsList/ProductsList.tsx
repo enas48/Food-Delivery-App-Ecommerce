@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Category } from '../../types/Category'
 import { Product } from '../../types/Product'
 import ProductCard from '../ui/ProductCard/ProductCard'
-import { type } from '@testing-library/user-event/dist/type'
+
 interface Props {
     type?: String
 }

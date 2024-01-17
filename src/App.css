@@ -8,3 +8,6 @@
 .custom-carsoul button{
   display: none;
 }
+@media (min-width: 992px) { .header_shrink{
+  position: fixed;
+ } }

@@ -23,9 +23,7 @@ export default function TestimonialSlider() {
           <Avatar src={process.env.PUBLIC_URL + 'assets/images/avater/avater1.png'}  alt="avatar" />
           <div>
             <Typography variant="h6">Tania Andrew</Typography>
-            <Typography variant="small" color="gray" className="font-normal">
-              Web Developer
-            </Typography>
+      
           </div>
         </div>
       </div>
@@ -35,9 +33,7 @@ export default function TestimonialSlider() {
         <Avatar src={process.env.PUBLIC_URL + 'assets/images/avater/avater2.png'}  alt="avatar" />
           <div>
             <Typography variant="h6">Tania Andrew</Typography>
-            <Typography variant="small" color="gray" className="font-normal">
-              Web Developer
-            </Typography>
+        
           </div>
         </div>
       </div>
@@ -47,9 +43,7 @@ export default function TestimonialSlider() {
         <Avatar src={process.env.PUBLIC_URL + 'assets/images/avater/avater3.png'}  alt="avatar" />
           <div>
             <Typography variant="h6">Tania Andrew</Typography>
-            <Typography variant="small" color="gray" className="font-normal">
-              Web Developer
-            </Typography>
+          
           </div>
         </div>
       </div>

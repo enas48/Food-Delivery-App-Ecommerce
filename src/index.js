@@ -4,12 +4,17 @@ import './index.css';
 import App from './App';
 import { ThemeProvider } from "@material-tailwind/react";
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import { store } from './store/store';
+import { Provider } from 'react-redux'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <ThemeProvider>
+      <Provider store={store}>
         <App />
+        </Provider>
       </ThemeProvider>
     </Router>
   </React.StrictMode>

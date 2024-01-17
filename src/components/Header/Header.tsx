@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useRef} from 'react'
 import {
   Navbar,
   Collapse,
@@ -11,10 +11,12 @@ import { Bars3Icon, XMarkIcon, UserIcon } from "@heroicons/react/24/outline";
 import { NavLink } from 'react-router-dom';
 import { ShoppingBagIcon } from "@heroicons/react/24/solid";
 function NavList() {
+
   const location = useLocation();
   const isActive = (item: string) => {
     return location.pathname.includes(item.toLowerCase());
   }
+
 
   const navLinks = [
     {
@@ -36,7 +38,7 @@ function NavList() {
 
   ]
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
+    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 " >
       {navLinks.map((item, index) => (
         <Typography
           key={index}
@@ -55,6 +57,7 @@ function NavList() {
   );
 }
 const Header = () => {
+  const headerRef=useRef<any> (null)
   const [openNav, setOpenNav] = useState(false);
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
@@ -66,10 +69,24 @@ const Header = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
-
+  useEffect(()=>{
+    let scroll=()=>window.addEventListener('scroll',()=>{
+      if(document.body.scrollTop>100 || document.documentElement.scrollTop>100){
+        if (headerRef.current != null) {
+        headerRef.current.classList.add('header_shrink')
+        }
+      }else{
+        if (headerRef.current != null) {
+          headerRef.current.classList.remove('header_shrink')
+          } 
+      }
+    })
+    scroll()
+    return()=>window.removeEventListener('scroll',scroll)
+  })
   return (
-    <div className='shadow-sm'>
-      <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none shadow-none text-[#000] ">
+    <div className='shadow-sm bg-white w-full' ref={headerRef}>
+      <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none shadow-none text-[#000] w-full " >
         <div className="flex items-center justify-between ">
           <NavLink to="/home" className="mr-4 cursor-pointer py-1">
             <img src={process.env.PUBLIC_URL + 'assets/logo.png'} className='max-h-20' alt="avatar" />

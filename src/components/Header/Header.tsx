@@ -1,4 +1,4 @@
-import React, { useEffect, useState ,useRef} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import {
   Navbar,
   Collapse,
@@ -6,17 +6,21 @@ import {
   IconButton,
   Badge,
 } from "@material-tailwind/react";
+import { cartUiActions } from '../../store/shopping-cart/cartUiSlice';
+
+
 import { useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon, UserIcon } from "@heroicons/react/24/outline";
 import { NavLink } from 'react-router-dom';
 import { ShoppingBagIcon } from "@heroicons/react/24/solid";
-function NavList() {
+import { useDispatch, useSelector } from 'react-redux';
+import { CartItemType } from '../../types/CartItem';
 
+function NavList() {
   const location = useLocation();
   const isActive = (item: string) => {
     return location.pathname.includes(item.toLowerCase());
   }
-
 
   const navLinks = [
     {
@@ -56,9 +60,20 @@ function NavList() {
     </ul>
   );
 }
+export interface CartState {
+  cartItems: CartItemType[];
+  totalQuantity: number;
+  totalAmount: number;
+}
 const Header = () => {
-  const headerRef=useRef<any> (null)
+  const headerRef = useRef<any>(null)
   const [openNav, setOpenNav] = useState(false);
+  const totalQuantity = useSelector((state: { cart: CartState }) => state.cart.totalQuantity);
+  const dispatch=useDispatch();
+
+  const toggleCart=()=>dispatch(cartUiActions.toggle())
+
+  /* navbar toogle in small screens*/
   const handleWindowResize = () =>
     window.innerWidth >= 960 && setOpenNav(false);
 
@@ -69,21 +84,24 @@ const Header = () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
-  useEffect(()=>{
-    let scroll=()=>window.addEventListener('scroll',()=>{
-      if(document.body.scrollTop>100 || document.documentElement.scrollTop>100){
+
+  /*header turn to fixed*/
+  useEffect(() => {
+    let scroll = () => window.addEventListener('scroll', () => {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         if (headerRef.current != null) {
-        headerRef.current.classList.add('header_shrink')
+          headerRef.current.classList.add('header_shrink')
         }
-      }else{
+      } else {
         if (headerRef.current != null) {
           headerRef.current.classList.remove('header_shrink')
-          } 
+        }
       }
     })
     scroll()
-    return()=>window.removeEventListener('scroll',scroll)
+    return () => window.removeEventListener('scroll', scroll)
   })
+
   return (
     <div className='shadow-sm bg-white w-full' ref={headerRef}>
       <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none shadow-none text-[#000] w-full " >
@@ -96,9 +114,9 @@ const Header = () => {
           <div className="hidden lg:block">
             <NavList />
           </div>
-          <div className="hidden lg:block">
+          <div className="hidden lg:block" onClick={toggleCart}>
             <div className='flex gap-6 items-center'>
-              <Badge content="5" >
+              <Badge content={totalQuantity} >
                 <IconButton className='bg-transparent'>
                   <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
                 </IconButton>
@@ -123,14 +141,14 @@ const Header = () => {
         </div>
         <Collapse open={openNav}>
           <NavList />
-          <div className='flex gap-6 items-center mt-5'>
-              <Badge content="5" >
-                <IconButton className='bg-transparent'>
-                  <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
-                </IconButton>
-              </Badge>
-              <UserIcon className="h-6 w-6 text-[#000]" />
-            </div>
+          <div className='flex gap-6 items-center mt-5' onClick={toggleCart}>
+            <Badge content={totalQuantity} >
+              <IconButton className='bg-transparent'>
+                <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
+              </IconButton>
+            </Badge>
+            <UserIcon className="h-6 w-6 text-[#000]" />
+          </div>
 
         </Collapse>
       </Navbar>

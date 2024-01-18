@@ -1,4 +1,4 @@
-export class CartItem {
+export class CartItemType {
     id: number | undefined;
     title: string = "";
     price: number = 0;

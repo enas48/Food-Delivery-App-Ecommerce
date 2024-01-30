@@ -28,7 +28,7 @@ const cartSlice = createSlice({
           price: newItem.price,
           imageUrl: newItem.imageUrl,
           quantity: 1,
-          totalPrice: newItem.totalPrice,
+          totalPrice: newItem.price,
         });
       } else {
         existingItem.quantity++;
@@ -36,11 +36,54 @@ const cartSlice = createSlice({
           Number(existingItem.totalPrice) + Number(newItem.price);
       }
       state.totalAmount = state.cartItems.reduce(
-        (total:number, item:CartItemType) => total + Number(item.price) * Number(item.quantity)
-      ,0);
+        (total: number, item: CartItemType) =>
+          total + Number(item.price) * Number(item.quantity),
+        0
+      );
+    },
+    decrementItem(state, action) {
+      const newItem: CartItemType = action.payload;
+      const existingItem = state.cartItems.find(
+        (item) => item.id === newItem.id
+      );
+      state.totalQuantity--;
+
+      if (existingItem) {
+        if (existingItem.quantity === 1) {
+          state.cartItems = state.cartItems.filter(
+            (item) => item.id !== newItem.id
+          );
+        } else {
+          existingItem.quantity--;
+          existingItem.totalPrice =
+            Number(existingItem.totalPrice) - Number(existingItem.price);
+        }
+      }
+      state.totalAmount = state.cartItems.reduce(
+        (total: number, item: CartItemType) =>
+          total + Number(item.price) * Number(item.quantity),
+        0
+      );
+    },
+    removeItem(state, action) {
+      const newItem: CartItemType = action.payload;
+      const existingItem = state.cartItems.find(
+        (item) => item.id === newItem.id
+      );
+
+      if (existingItem) {
+        state.totalQuantity = state.totalQuantity - existingItem.quantity;
+        state.cartItems = state.cartItems.filter(
+          (item) => item.id !== newItem.id
+        );
+      }
+      state.totalAmount = state.cartItems.reduce(
+        (total: number, item: CartItemType) =>
+          total + Number(item.price) * Number(item.quantity),
+        0
+      );
     },
   },
 });
 export const cartActions = cartSlice.actions;
-export default cartSlice
-
+export default cartSlice;

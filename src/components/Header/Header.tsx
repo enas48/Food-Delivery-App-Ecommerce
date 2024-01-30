@@ -69,9 +69,9 @@ const Header = () => {
   const headerRef = useRef<any>(null)
   const [openNav, setOpenNav] = useState(false);
   const totalQuantity = useSelector((state: { cart: CartState }) => state.cart.totalQuantity);
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
-  const toggleCart=()=>dispatch(cartUiActions.toggle())
+  const toggleCart = () => dispatch(cartUiActions.toggle())
 
   /* navbar toogle in small screens*/
   const handleWindowResize = () =>
@@ -114,13 +114,15 @@ const Header = () => {
           <div className="hidden lg:block">
             <NavList />
           </div>
-          <div className="hidden lg:block" onClick={toggleCart}>
+          <div className="hidden lg:block" >
             <div className='flex gap-6 items-center'>
-              <Badge content={totalQuantity} >
-                <IconButton className='bg-transparent'>
-                  <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
-                </IconButton>
-              </Badge>
+              <div onClick={toggleCart}>
+                <Badge content={totalQuantity} >
+                  <IconButton className='bg-transparent'>
+                    <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
+                  </IconButton>
+                </Badge>
+              </div>
               <UserIcon className="h-6 w-6 text-[#000]" />
             </div>
 
@@ -141,12 +143,14 @@ const Header = () => {
         </div>
         <Collapse open={openNav}>
           <NavList />
-          <div className='flex gap-6 items-center mt-5' onClick={toggleCart}>
-            <Badge content={totalQuantity} >
-              <IconButton className='bg-transparent'>
-                <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
-              </IconButton>
-            </Badge>
+          <div className='flex gap-6 items-center mt-5'>
+            <div onClick={toggleCart}>
+              <Badge content={totalQuantity} >
+                <IconButton className='bg-transparent'>
+                  <ShoppingBagIcon className="h-5 w-5 text-[#000]" />
+                </IconButton>
+              </Badge>
+            </div>
             <UserIcon className="h-6 w-6 text-[#000]" />
           </div>
 

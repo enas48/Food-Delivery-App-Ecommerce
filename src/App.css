@@ -8,6 +8,30 @@
 .custom-carsoul button{
   display: none;
 }
+.commen-section{
+  background: linear-gradient(#212245b2,#212245b2), url("../public/assets/images/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: center;
+  padding: 100px 0;
+}
 @media (min-width: 992px) { .header_shrink{
   position: fixed;
  } }
+ .paginetion-btns{
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+ }
+ .paginetion-btns a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+ }
+.paginetion-btns li a:hover{
+background: #fff8eb;
+}
+.paginetion-btns li.selected a{
+  color: #fff8eb;
+  background: #FB9300;
+}

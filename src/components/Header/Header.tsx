@@ -103,8 +103,8 @@ const Header = () => {
   })
 
   return (
-    <div className='shadow-sm bg-white w-full' ref={headerRef}>
-      <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none shadow-none text-[#000] w-full " >
+    <div className='shadow-sm bg-white w-full z-10' ref={headerRef}>
+      <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none shadow-none text-[#000] w-full bg-white " >
         <div className="flex items-center justify-between ">
           <NavLink to="/home" className="mr-4 cursor-pointer py-1">
             <img src={process.env.PUBLIC_URL + 'assets/logo.png'} className='max-h-20' alt="avatar" />

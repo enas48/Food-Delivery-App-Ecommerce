@@ -1,7 +1,9 @@
 import React from 'react'
 import { Carousel } from "@material-tailwind/react";
 import { Avatar, Typography } from "@material-tailwind/react";
-
+import avater1 from '../../../assets/images/avater/avater1.png';
+import avater2 from '../../../assets/images/avater/avater2.png';
+import avater3 from '../../../assets/images/avater/avater3.png';
 export default function TestimonialSlider() {
 
   return (
@@ -20,7 +22,7 @@ export default function TestimonialSlider() {
       <div className="relative h-full w-full pb-8">
         <p className='leading-relaxed mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus at voluptate voluptas nam distinctio quo, dolore molestiae.</p>
         <div className="flex items-center gap-4">
-          <Avatar src={process.env.PUBLIC_URL + 'assets/images/avater/avater1.png'}  alt="avatar" />
+          <Avatar src={avater1}  alt="avatar" />
           <div>
             <Typography variant="h6">Tania Andrew</Typography>
       
@@ -30,7 +32,7 @@ export default function TestimonialSlider() {
       <div className="relative h-full w-full  pb-8">
         <p className='leading-relaxed mb-4'> sit amet consectetur adipisicing elit. Natus at  voluptas nam distinctio quo, dolore molestiae.</p>
         <div className="flex items-center gap-4">
-        <Avatar src={process.env.PUBLIC_URL + 'assets/images/avater/avater2.png'}  alt="avatar" />
+        <Avatar src={avater2}  alt="avatar" />
           <div>
             <Typography variant="h6">Tania Andrew</Typography>
         
@@ -40,7 +42,7 @@ export default function TestimonialSlider() {
       <div className="relative h-full w-full  pb-8">
         <p className='leading-relaxed mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. distinctio quo, dolore molestiae.</p>
         <div className="flex items-center gap-4">
-        <Avatar src={process.env.PUBLIC_URL + 'assets/images/avater/avater3.png'}  alt="avatar" />
+        <Avatar src={ avater3}  alt="avatar" />
           <div>
             <Typography variant="h6">Tania Andrew</Typography>
           

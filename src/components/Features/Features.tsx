@@ -4,19 +4,19 @@ export default function Features() {
     const featureData = [
         {
             title: 'Quick Delivery',
-            imgUrl: `${process.env.PUBLIC_URL} assets/images/service-01.png`,
+            imgUrl: `${require('../../assets/images/service-01.png')}`,
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             Minus: 'adipisicing'
         },
         {
             title: 'Super Dine In',
-            imgUrl: `${process.env.PUBLIC_URL} assets/images/service-02.png`,
+            imgUrl: `${require('../../assets/images/service-02.png')}`,
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             Minus: "Porro."
         },
         {
             title: 'Easy Pick Up',
-            imgUrl: `${process.env.PUBLIC_URL} assets/images/service-03.png`,
+            imgUrl: `${require('../../assets/images/service-03.png')}`,
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             Minus: "Porro."
         }

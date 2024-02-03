@@ -1,11 +1,11 @@
 import React from 'react'
-
+import chooseus from '../../assets/images/img2.svg'
 export default function WhyChooseus() {
     return (
         <div className="container mx-auto">
             <div className="grid gap-9 lg:content-center lg:grid-cols-2   ">
                 <div>
-                    <img src={process.env.PUBLIC_URL + 'assets/images/img2.svg'} className='w-96 mx-auto ' alt="avatar" />
+                    <img src={ chooseus} className='w-96 mx-auto ' alt="avatar" />
                 </div>
                 <div>
                     <h2 className='text-3xl font-bold mb-3 '>Why <span className='text-[#FB9C16]'>Tasty Treat?</span></h2>

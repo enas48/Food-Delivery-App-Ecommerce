@@ -1,6 +1,6 @@
 import React from 'react'
 import TestimonialSlider from '../ui/slider/TestimonialSlider'
-
+import testimonial from '../../assets/images/testimonial.svg'
 export default function Testimonial() {
   return (
     <div className="container mx-auto">
@@ -16,7 +16,7 @@ export default function Testimonial() {
             </div>
         </div>
         <div>
-            <img src={process.env.PUBLIC_URL + 'assets/images/testimonial.svg'} className='w-96 mx-auto ' alt="avatar" />
+            <img src={testimonial} className='w-96 mx-auto ' alt="testimonial" />
         </div>
 
 

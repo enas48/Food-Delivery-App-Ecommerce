@@ -1,37 +1,69 @@
-*{
+* {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
-.placeholder-shown\:border:placeholder-shown{
+.placeholder-shown\:border:placeholder-shown {
   border-width: 2px;
 }
-.custom-carsoul button{
+.custom-carsoul button {
   display: none;
 }
-.commen-section{
-  background: linear-gradient(#212245b2,#212245b2), url("./assets/images/banner.jpg");
+.commen-section {
+  background: linear-gradient(#212245b2, #2122456b),
+    url('./assets/images/banner3.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-attachment: center;
   padding: 100px 0;
+  background-position:50% 50%;
 }
-@media (min-width: 992px) { .header_shrink{
-  position: fixed;
- } }
- .paginetion-btns{
+@media (min-width: 992px) {
+  .header_shrink {
+    position: fixed;
+  }
+}
+.paginetion-btns {
   display: flex;
   margin: 20px 0;
   justify-content: center;
- }
- .paginetion-btns a {
+}
+.paginetion-btns a {
   color: black;
   padding: 8px 16px;
   text-decoration: none;
- }
-.paginetion-btns li a:hover{
-background: #fff8eb;
 }
-.paginetion-btns li.selected a{
+.paginetion-btns li a:hover {
+  background: #fff8eb;
+}
+.paginetion-btns li.selected a {
   color: #fff8eb;
-  background: #FB9300;
+  background: #fb9300;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 2px solid #ddd;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  color: black;
+}
+input[type="number"].phone{
+  border: 2px solid #ddd;
+}
+input[type="number"].phone:first{
+  border: 2px solid #383737;
+}
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }

@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { cartActions } from '../store/shopping-cart/cartSlice'
 import Review from '../components/ui/Review/Review'
 import ProductCard from '../components/ui/ProductCard/ProductCard'
+
 import {
   Tabs,
   TabsHeader,
@@ -14,7 +15,7 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
-
+import { ToastContainer, toast } from 'react-toastify';
 const products: Product[] = [
   {
     id: 1,
@@ -161,10 +162,21 @@ const FoodDetails = () => {
   const dispatch = useDispatch();
   const addToCart = () => {
     dispatch(cartActions.addItem(product))
+    toast.success('Product added successfuly!', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+
+    });
   }
   let relatedProducts = useMemo(() => products.filter(p => product?.category === p.category), [product]);
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     const item = products.filter(product => product.id == id)[0];
     setProduct(item)
     setReviewImage(item.imageUrl)
@@ -177,6 +189,7 @@ const FoodDetails = () => {
   return (
     <Helmet title='Product Details'>
       <>
+        <ToastContainer />
         <CommenSection title={product?.title} />
         <div className='mx-auto max-w-screen-xl px-6 py-6 '>
           <div className="flex flex-row flex-wrap gap-12 content-center md:content-start mb-5">

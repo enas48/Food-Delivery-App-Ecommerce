@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Product } from '../../../types/Product'
 import { useDispatch } from 'react-redux'
 import { cartActions } from '../../../store/shopping-cart/cartSlice'
-
+import { ToastContainer, toast } from 'react-toastify';
 export default function ProductCard(props: { item: Product }) {
     const { id,
         title,
@@ -15,9 +15,21 @@ export default function ProductCard(props: { item: Product }) {
         dispatch(cartActions.addItem({
             id, title, imageUrl, price
         }))
+        toast.success('Product added successfuly!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+
+        });
     }
     return (
         <div className='shadow-md p-3 rounded m-2 items-center flex flex-col gap-3 '>
+            <ToastContainer />
             <div className='transition ease-in-out delay-100 hover:-translate-y-2 hover:scale-105  duration-300'>
                 <Link to={`/foods/${id}`}>  <img src={imageUrl} className='h-[4rem]' alt='product-img' /></Link>
             </div>

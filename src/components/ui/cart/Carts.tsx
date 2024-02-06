@@ -1,12 +1,12 @@
 import React from 'react'
 import {
     List,
-    Card,
     Drawer,
     Button,
     Typography,
     IconButton,
 } from "@material-tailwind/react";
+import { Link } from 'react-router-dom';
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import { useSelector, useDispatch } from 'react-redux';
 import { cartUiActions } from '../../../store/shopping-cart/cartUiSlice';
@@ -77,7 +77,7 @@ export default function Carts() {
                     <Typography >
                         Subtotal: <span className='font-bold'>${totalAmount}</span>
                     </Typography>
-                    <Button size="sm" className='bg-[#FB9C16]'>Checkout</Button>
+                    <Button size="sm" className='bg-[#FB9C16]'>  <Link to='/checkout'>Checkout</Link></Button>
                 </div>
             </div>
         </Drawer>

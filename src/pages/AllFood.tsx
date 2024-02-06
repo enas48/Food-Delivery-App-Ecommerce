@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Helmet from '../components/Helmet/Helmet'
 import CommenSection from '../components/ui/commen-section/CommenSection'
 import { Input, Select, Option } from "@material-tailwind/react";
@@ -133,6 +133,9 @@ const AllFood = () => {
     // const newOffset = (event.selected * itemsPerPage) % searchedProducts.length;
     setPageNumber(selected);
   };
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  })
   return (
     <Helmet title='All Foods'>
       <>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React from 'react'
 import Helmet from '../components/Helmet/Helmet'
 import CommenSection from '../components/ui/commen-section/CommenSection'
 import { useSelector, useDispatch } from 'react-redux';
@@ -106,7 +106,11 @@ const Cart = () => {
                 Continue Shopping
               </Link>
             </Button>
-            <Button size="sm" className='bg-[#FB9C16]'>Procceced to Checkout</Button>
+            <Button size="sm" className='bg-[#FB9C16]'>
+              
+            <Link to='/checkout'>
+            Procceced to Checkout
+              </Link></Button>
           </div>
         </div>
       </>

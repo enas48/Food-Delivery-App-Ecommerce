@@ -106,7 +106,7 @@ const Cart = () => {
                 Continue Shopping
               </Link>
             </Button>
-            <Button size="sm" className='bg-[#FB9C16]'>
+            <Button size="sm" disabled={totalAmount===0} className='bg-[#FB9C16]'>
               
             <Link to='/checkout'>
             Procceced to Checkout

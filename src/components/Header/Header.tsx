@@ -10,7 +10,7 @@ import { cartUiActions } from '../../store/shopping-cart/cartUiSlice';
 import logo from '../../assets/logo.png'
 
 
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon, UserIcon } from "@heroicons/react/24/outline";
 import { NavLink } from 'react-router-dom';
 import { ShoppingBagIcon } from "@heroicons/react/24/solid";
@@ -89,7 +89,7 @@ const Header = () => {
   /*header turn to fixed*/
   useEffect(() => {
     let scroll = () => window.addEventListener('scroll', () => {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      if (document.body.scrollTop > 115 || document.documentElement.scrollTop > 115) {
         if (headerRef.current != null) {
           headerRef.current.classList.add('header_shrink')
         }
@@ -124,7 +124,9 @@ const Header = () => {
                   </IconButton>
                 </Badge>
               </div>
+              <Link to='/login'>
               <UserIcon className="h-6 w-6 text-[#000]" />
+            </Link>
             </div>
 
 
@@ -152,7 +154,9 @@ const Header = () => {
                 </IconButton>
               </Badge>
             </div>
-            <UserIcon className="h-6 w-6 text-[#000]" />
+            <Link to='/login'>
+              <UserIcon className="h-6 w-6 text-[#000]" />
+            </Link>
           </div>
 
         </Collapse>

@@ -164,7 +164,7 @@ const Checkout = () => {
               <Select options={selectCities} placeholder='Select City' isDisabled={country === ''} onChange={(choice: any) => setCity(choice?.value)} />
 
               <Input crossOrigin="" variant="outlined" className=' ' name="postalCode" value={formdata.postalCode! || ""} type='number' label="Postal Code" onChange={onChange} />
-              <button className='bg-[#FB9C16] text-white text-nowrap rounded p-2 mt-2 w-max px-5' onClick={submit}>Payment</button>
+              <button type='submit'  className='bg-[#FB9C16] text-white text-nowrap rounded p-2 mt-2 w-max px-5' onClick={submit}>Payment</button>
             </div>
             <div className='col-span-full md:col-start-3  md:col-end-4 bg-[#fff8eb] p-4 rounded h-max'>
               <h6 className='flex justify-between '><span>Subtotal</span><span> ${cartTotalAmount}</span></h6>

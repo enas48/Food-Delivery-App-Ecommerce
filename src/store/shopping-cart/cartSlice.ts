@@ -6,10 +6,31 @@ export interface InitialState {
   totalAmount: number;
 }
 
+const items: [] =
+  localStorage.getItem("cartItems") !== null
+    ? JSON.parse(localStorage.getItem("cartItems") as string)
+    : [];
+const totalAmount: number =
+  localStorage.getItem("totalAmount") !== null
+    ? JSON.parse(localStorage.getItem("totalAmount") as string)
+    : 0;
+const totalQuantity: number =
+  localStorage.getItem("totalQuantity") !== null
+    ? JSON.parse(localStorage.getItem("totalQuantity") as string)
+    : 0;
+const setItemFunc = (
+  item: CartItemType[],
+  totalAmount: number,
+  totalQuantity: number
+) => {
+  localStorage.setItem("cartItems", JSON.stringify(item));
+  localStorage.setItem("totalAmount", JSON.stringify(totalAmount));
+  localStorage.setItem("totalQuantity", JSON.stringify(totalQuantity));
+};
 const initialState: InitialState = {
-  cartItems: [],
-  totalQuantity: 0,
-  totalAmount: 0,
+  cartItems: items,
+  totalQuantity: totalQuantity,
+  totalAmount: totalAmount,
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -40,6 +61,12 @@ const cartSlice = createSlice({
           total + Number(item.price) * Number(item.quantity),
         0
       );
+    
+      setItemFunc(
+        state.cartItems.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity
+      );
     },
     decrementItem(state, action) {
       const newItem: CartItemType = action.payload;
@@ -64,6 +91,11 @@ const cartSlice = createSlice({
           total + Number(item.price) * Number(item.quantity),
         0
       );
+      setItemFunc(
+        state.cartItems.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity
+      );
     },
     removeItem(state, action) {
       const newItem: CartItemType = action.payload;
@@ -81,6 +113,11 @@ const cartSlice = createSlice({
         (total: number, item: CartItemType) =>
           total + Number(item.price) * Number(item.quantity),
         0
+      );
+      setItemFunc(
+        state.cartItems.map((item) => item),
+        state.totalAmount,
+        state.totalQuantity
       );
     },
   },

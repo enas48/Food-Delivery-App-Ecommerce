@@ -145,15 +145,7 @@ const AllFood = () => {
             <div className="w-72">
               <Input value={searchItem} onChange={(e) => setSearchItem(e.target.value)} crossOrigin="" placeholder="I'm looking for ...." label='' icon={<i className="fas fa-search" />} />
             </div>
-            <div className="w-72">
-              <Select label="Filter by" value='Default'>
-                <Option value='Default'>Default</Option>
-                <Option value='ascending'>Alphabetically, A-Z</Option>
-                <Option value='descending'>Alphabetically, Z-A</Option>
-                <Option value='high-price'>High Price</Option>
-                <Option value='low-price'>Low Price</Option>
-              </Select>
-            </div>
+        
           </div>
           <div className='flex flex-wrap gap-3 justify-center justify-items-center'>
 

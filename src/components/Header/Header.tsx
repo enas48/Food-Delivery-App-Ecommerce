@@ -36,10 +36,7 @@ function NavList() {
       display: 'Cart',
       path: '/cart'
     },
-    {
-      display: 'Contact',
-      path: '/contact'
-    },
+
 
   ]
   return (
